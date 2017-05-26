@@ -1,0 +1,10 @@
+// Convert pixels to line-height
+// eg. When the font size is 18 px and the line feed is 28 px write f-line-height( 18, 28 )
+@function f-line-height( $fontSize: '', $lineFeed: '' ) {
+
+	$lineHeight: 1;
+	@if $fontSize != '' and $lineFeed != '' {
+		$lineHeight: ($lineFeed / $fontSize);
+	}
+	@return #{$lineHeight};
+}

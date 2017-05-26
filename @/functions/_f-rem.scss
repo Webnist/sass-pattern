@@ -1,0 +1,14 @@
+// Convert pixels to rems
+// eg. for a relational value of 12px write f-rem(12)
+// Assumes $em-base is the font-size of 10px
+
+@function f-rem( $pxval ) {
+
+	@if not unitless($pxval) {
+		$pxval: $pxval / ($pxval * 0 + 1);
+	}
+
+	$base: 10;
+
+	@return ($pxval / $base) * 1rem;
+}

@@ -1,0 +1,10 @@
+// Convert letter-spacing
+// eg. When tracking = 50 on Photoshop, write f-letter-spacing(50).
+@function f-letter-spacing( $tracking: '' ) {
+
+	$letterSpacing: 'normal';
+	@if $tracking != '' {
+		$letterSpacing: ( $tracking / 1000 ) * 1em;
+	}
+	@return #{$letterSpacing};
+}
